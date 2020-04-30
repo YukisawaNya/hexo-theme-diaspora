@@ -2,7 +2,7 @@
 <div id="screen">
     <div id="mark">
         <div class="layer" data-depth="0.4">
-            <%- image_tag(theme.welcome_cover || first.cover || "/img/welcome-cover.jpg", {id: "cover", crossorigin: "anonymous", width: 1920, height: 1080}) %>
+            <%- image_tag(theme.welcome_cover || first.cover || "/img/welcome-cover.jpg", {id: "cover", crossorigin: "anonymous"}) %>
         </div>
     </div>
     <div id="vibrant">
@@ -15,16 +15,25 @@
         <div>
             <a class="image-logo" href="/"></a>
 			<% if (theme.local_search.enable){ %>
-			<div class="iconfont icon-search switchsearch" href="/search/" title="搜索"></div>
+			<div class="iconfont icon-search switchsearch" href="/search/" title="杜索"></div>
 			<%}%>
             <div class="iconfont icon-menu switchmenu"></div>
         </div>
     </div>
     <% if ( first ) { %>
     <div id="post0">
-        <p><%- first.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
-        <h2><%- link_to(first.path, first.title || config.title, {class: "posttitle"}) %></h2>
-        <p class="summary"><%- truncate(strip_html(first.content), {length: 60, omission: '...'}) %></p>
+        <% if ( theme.index.custum == false ) { %>
+            <p><%- first.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
+            <h2><%- link_to(first.path, first.title || config.title, {class: "posttitle"}) %></h2>
+            <% if (first.excerpt){ %>
+                <p class="summary"><%- strip_html(first.excerpt) %></p>
+            <% } else { %>
+            <p class="summary"><%- truncate(strip_html(first.content), {length: 60, omission: '...'}) %></p>
+            <% } %>
+        <% } else { %>
+            <h2><%- link_to(theme.index.link, theme.index.title || config.title, {class: "posttitle"}) %></h2>
+            <p class="summary"><%- theme.index.subtile %></p>
+        <% } %>
     </div>
     <% } %>
 </div>
