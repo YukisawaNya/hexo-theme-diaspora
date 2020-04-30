@@ -22,7 +22,10 @@
     </div>
     <% if ( first ) { %>
     <div id="post0">
-        <% if ( theme.index.custum == false ) { %>
+        <% if (theme.index.custom) { %>
+            <h2><%- link_to(theme.index.link, theme.index.title || config.title, {class: "posttitle"}) %></h2>
+            <p class="summary"><%- strip_html(theme.index.subtitle) %></p>
+        <% } else { %>
             <p><%- first.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
             <h2><%- link_to(first.path, first.title || config.title, {class: "posttitle"}) %></h2>
             <% if (first.excerpt){ %>
@@ -30,10 +33,7 @@
             <% } else { %>
             <p class="summary"><%- truncate(strip_html(first.content), {length: 60, omission: '...'}) %></p>
             <% } %>
-        <% } else { %>
-            <h2><%- link_to(theme.index.link, theme.index.title || config.title, {class: "posttitle"}) %></h2>
-            <p class="summary"><%- theme.index.subtile %></p>
-        <% } %>
+            <% } %>
     </div>
     <% } %>
 </div>

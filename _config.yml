@@ -28,9 +28,10 @@ cover:
 # 首页自定义
 index:
     # 开启后首页显示自定义标题，关闭后显示第一篇文章
-    custom: true
+    custom: false
     title: 坊洛酱的小作坊
     subtitle: '为什么不点一下右上角的菜单呢=￣ω￣='
+    link: 
 
 
 # 是否使用mathjax
