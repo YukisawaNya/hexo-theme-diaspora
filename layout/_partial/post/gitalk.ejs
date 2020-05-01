@@ -1,6 +1,9 @@
-<% if (theme.gitalk != undefined){ %>
+<% if (post.comment == undefined || post.comment == true) {
+    var comment=true;
+}
+if (theme.gitalk != undefined){ %>
     <div id='gitalk-container' class="comment link"
-		data-enable='<%=theme.gitalk.enable%>'
+		data-enable='<%=comment%>'
         data-ae='<%=theme.gitalk.autoExpand%>'
         data-ci='<%=theme.gitalk.clientID%>'
         data-cs='<%=theme.gitalk.clientSecret%>'
