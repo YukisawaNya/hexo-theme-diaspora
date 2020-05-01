@@ -1,19 +1,18 @@
 # Hexo-theme-diaspora
 
 
-**[在线预览 | PREVIEW ](http://fech.in)**
+**[在线预览 | PREVIEW ](https://fangluo.top)**
 
-一款基于WP移植的Hexo主题，适合喜欢摄影，影评，乐评和玩弄文字的你，干净，清新； 响应式，Ajax，更多好玩的等你来发现。 
+>一款基于WP移植的Hexo主题，适合喜欢摄影，影评，乐评和玩弄文字的你，干净，清新； 响应式，Ajax，更多好玩的等你来发现。
+>> 再次感谢原作者创作出这么精美的主题 [@Loeify](https://github.com/LoeiFy/Diaspora) 。如果你喜欢，请捐助原作者。
 
-> 再次感谢原作者创作出这么精美的主题 [@Loeify](https://github.com/LoeiFy/Diaspora) 。如果你喜欢，请捐助原作者。
-
-![cover](https://fech.in/static/images/Diaspora.jpg)
+>![cover](https://fech.in/static/images/Diaspora.jpg)
 
 
 ### 安装主题
 
 ``` bash
-$ git clone https://github.com/Fechin/hexo-theme-diaspora.git themes/diaspora
+$ git clone https://github.com/rainbowbedrock/hexo-theme-diaspora.git themes/diaspora
 ```
 
 
@@ -52,6 +51,7 @@ tags:
     - 标签2
 mp3: http://domain.com/awesome.mp3
 cover: http://domain.com/awesome.jpg
+comment: true
 ---
 ```
 
@@ -128,11 +128,10 @@ local_search:
 ```yml
 # 头部菜单，title: link
 menu:
-  首页: /
+  搜索: /search
+  归档: /archives
   分类: /categories
   标签: /tags
-  归档: /archives  
-  关于: /about
 
 # 是否显示目录
 TOC: false
@@ -141,43 +140,49 @@ TOC: false
 autoplay: false
 
 # 默认音乐（随机播放）
-mp3: 
-    - http://link.hhtjim.com/163/425570952.mp3
-    - http://link.hhtjim.com/163/425570952.mp3
+mp3:
 
 # 首页封面图, 为空时取文章的cover作为封面(注意跨域问题,建议使用同源图片)
-welcome_cover: /img/welcome-cover.jpg
-
+welcome_cover: /images/bg.jpg
 
 # 默认文章封面图（随机调用,支持外链）
 cover: 
-  - /img/cover.jpg
-  - /img/welcome-cover.jpg
+  - /img/nocover.jpg
 
- 
+# 首页自定义
+index:
+    # 开启后首页显示自定义标题，关闭后显示第一篇文章
+    custom: false
+    title:
+    subtitle: ''
+    link:
+
+
+# 是否使用mathjax
+mathjax: true
+
+
 # 是否关闭默认滚动条
 scrollbar: true
 
 # 本地搜索,请将索引文件放在网站根目录,或修改主题js文件的path值
 local_search:
     # 是否启用
-    enable: false
+    enable: true
 
 # 是否显示 一言(hitokoto)
-hitokoto: true
+hitokoto: false
 
 # 链接(可选:facebook,twitter,github,wechat,email)
 links:
-    facebook: /
-    twitter: /
-    github: /
-    wechat: /img/logo.png
-    email: mailto:xxxx@gmail.com
+    twitter: https://twitter.com/Im_Fang_Luo
+    github: https://github.com/rainbowbedrock
+    email: mailto:rainbowbedrock@outlook.com
   
 # 备案
 beian: 
     # 是否显示备案信息
-    enable: true
+    enable: false
     # 是否在主页面最底下显示备案信息(虽然丑，但是完全满足规定要求)
     enableFooter: false
     # 备案号
@@ -185,15 +190,12 @@ beian:
     # 链接地址
     link: http://www.beian.miit.gov.cn
 
-# 是否使用mathjax
-mathjax: false
-
 # Gitalk 评论插件（https://github.com/gitalk/gitalk）
 gitalk:
     # 是否启用评论功能
-    enable: false
+    enable: true
     # 是否自动展开评论框
-    autoExpand: false
+    autoExpand: true
     # 应用编号
     clientID: ''
     # 应用秘钥
@@ -210,16 +212,15 @@ gitalk:
     distractionFreeMode: false
 
 # 网站关键字
-keywords: Fechin
+keywords: ''
 
 # 要使用google_analytics进行统计的话，这里需要配置ID
-google_analytics: 
+google_analytics:
 
 # 网站ico
-favicon: /img/favicon.png
+favicon: /images/favicon.png
 
 # rss文件
 rss: atom.xml
 
 ```
-
