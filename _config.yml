@@ -1,8 +1,13 @@
+# 头部菜单，title: link
 menu:
   搜索: /search
+  全站导航: /nevigation
+  喵语翻译器: /MLT
   归档: /archives
   分类: /categories
   标签: /tags
+  关于我: /AboutMe
+  坊洛酱的小客栈: https://wp.fangluo.top/
 
 # 是否显示目录
 TOC: false
@@ -23,14 +28,14 @@ cover:
 # 首页自定义
 index:
     # 开启后首页显示自定义标题，关闭后显示第一篇文章
-    custom: false
-    title:
-    subtitle: ''
-    link:
+    custom: true
+    title: 坊洛酱的小作坊
+    subtitle: '为什么不点一下右上角的菜单呢=￣ω￣='
+    link: /nevigation
 
 
 # 是否使用mathjax
-mathjax: true
+mathjax: false
 
 
 # 是否关闭默认滚动条
@@ -93,3 +98,6 @@ favicon: /images/favicon.png
 
 # rss文件
 rss: atom.xml
+
+# manifest文件
+manifest: /manifest.json

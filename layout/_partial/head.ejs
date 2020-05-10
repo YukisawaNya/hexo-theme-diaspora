@@ -52,4 +52,7 @@ var description = '';
             }
         </style>
         <% } %>
+    <% if (theme.manifest != undefined) { %>
+        <link rel="manifest" href="<%- theme.manifest %>">
+    <% } %>
 </head>
